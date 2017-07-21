@@ -1,0 +1,68 @@
+{
+    "exposure_areas": {
+        "Area 1": {
+            "Hazard Lists": {
+                "List 1": {
+                    "Hazards": {
+                        "Hazard 1": {
+                            "Interventions": [
+                                "Intervention 1",
+                                "Intervention 2",
+                                "Intervention 3",
+                                "N/A"
+                            ]
+                        },
+                        "Hazard 2": {
+                            "Interventions": [
+                                "Intervention 4",
+                                "Intervention 5",
+                                "Intervention 6",
+                                "Intervention 7",
+                                "Intervention 8",
+                                "N/A"
+                            ]
+                        }
+                    }
+                },
+                "List 2": {
+                    "Hazards": {
+                        "": {
+                            "Interventions": [
+                                "Intervention 4",
+                                "Intervention 5",
+                                "Intervention 6",
+                                "Intervention 7",
+                                "Intervention 8",
+                                "N/A"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "Area 2": {
+            "List 1": {
+                "Hazards": {
+                    "Hazard 2": {
+                        "Interventions": [
+                            "Intervention 1",
+                            "Intervention 2",
+                            "Intervention 3",
+                            "N/A"
+                        ]
+                    },
+                    "Hazard 3": {
+                        "Interventions": [
+                            "Intervention 4",
+                            "Intervention 5",
+                            "Intervention 6",
+                            "Intervention 7",
+                            "Intervention 8",
+                            "N/A"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+                <select class="exposures minimal" id="Exposures" name="Exposures" required="" size="1" title="">
+                    <option disabled selected hidden>Please select an option</option>
+                    <% if subMenu != "" %>
+                        <% i = 1 %>
+                        <% subMenu.each do |area| %>
+                            <option value="<%=i%>"><%=area%></option><%i += 1 %>
+                        <% end %>
+                    <% end %>
+                </select>
+                    <% divCounter = 1 %>
+                    <% subMenu.each do |jake| %>
+                        <div class="<%=divCounter%>">
+                            <select>
+                                <option disabled selected hidden value=''>Please select an option</option>
+                                <% if subMenu2 != "" %>
+                                    <% menu = subMenu2[jake] %>
+                                    <% menu.each do |lst| %>
+                                        <% showDiv = lst.to_s.gsub(" ", '_') %>
+                                        <option value="<%=showDiv%>"><%=lst%></option>
+                                    <% end %>
+                                <% end %>
+                            </select>
+                        </div>
+                    <% divCounter += 1 %>
+                    <% end %>
+                </div>
+                <div>
+                    <% i = 1 %>
+                    <% subMenu3.each do |lst, val| %>
+                        <% if val != [""] %>
+                            <%hazDiv = lst.to_s.gsub(" ", '_') %>
+                            <div class="<%=hazDiv%>">
+                                <select>
+                                    <option disabled selected hidden value=''>Please select an option</option>
+                                        <% val.each do |lstVal| %>
+                                            <% optionVal = lstVal.to_s.gsub(" ", '_') %>
+                                            <option value="<%=optionVal%>"><%=lstVal%></option>
+                                        <% end %>
+                                </select>
+                            </div>
+                        <% i += 1 %>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <center>
+            <a class="btn btn-primary btnsize" id="btnCreatExposure" onclick="toggleHide('exposure_int')">Next</a>
+        </center>
+    </form>
+</div>
+<div id="exposure_int" style="display: none">
+    <!--Interventions -->
+    <form class="site_margin" id="myform2" name="myform2">
+        <div class='interventionPosition' id="interventions">
+            <h5 class="headline_margin_interventioni">Please choose interventions currently in place related to chosen exposure.</h5>
+            <% interventions.each do |exp, inter| %>
+                <% interId = exp.to_s.gsub(" ", '_') %>
+                <div id="<%=interId%>" style="display: none">
+                    <% interventions[exp].each do |intInter| %>
+                        <div class="checkbox">
+                            <label class="control control--checkbox"><input class="source" name="intervention" type="checkbox" value="<%=intInter%> "><%=intInter%><div class="control__indicator"></div></label>
+                        </div>
+                    <% end %>
+                </div>
+            <% end %>
+            <p class="int_input" id="insertinputs"></p>
+            <h5 class="additional_comment_padding">Any additional comments or suggestions to improve safety score</h5>
+            <div class="form-group">
+                <textarea autofocus="" class="form-control comment_area" id="comment" name="additional_comments" rows="10"></textarea>
+            </div>
+            <div class="tsbuttons">
+                <div class="btmargin col-lg-12">
+                    <button class="btn btn-primary3 btnsize" id="btnUpdateExposureInfoSameLocation" onclick="toggleHide('upload_photo_section')" type="button">Add Photo</button> <button class="btn btn-primary3 btnsize" id="btnUpdateExposureInfo2" onclick="toggleHide('show_table_preview')" type="button">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
